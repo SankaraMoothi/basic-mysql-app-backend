@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const urlDB = `process.env.DB_URL`;
+const urlDB = process.env.DB_URL;
 const db = mysql.createConnection(urlDB);
 app.get("/", (req, res) => {
   res.json("hello This Is The Backend...");
